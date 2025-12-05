@@ -1,0 +1,84 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #1a237e;
+  --secondary-blue: #42a5f5;
+  --accent-red: #c62828;
+  --off-white: #f8f9fa;
+  --gray-light: #e0e0e0;
+  --gray: #757575;
+  --gray-dark: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8f9fa] text-[#333333] antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-[#1a237e] to-[#283593] hover:from-[#283593] hover:to-[#1a237e] text-white shadow-lg hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white hover:bg-gray-50 text-[#1a237e] border-2 border-[#1a237e] hover:border-[#c62828] hover:text-[#c62828];
+  }
+  
+  .btn-red {
+    @apply btn bg-gradient-to-r from-[#c62828] to-[#b71c1c] hover:from-[#b71c1c] hover:to-[#c62828] text-white shadow-lg hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-white/80 text-[#1a237e];
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 bg-[#f8f9fa] border-2 border-[#e0e0e0] rounded-lg text-[#333333] placeholder-[#757575] focus:outline-none focus:border-[#42a5f5] focus:bg-white transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white border border-[#e0e0e0] rounded-2xl shadow-md;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-2 transition-all duration-300;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#f8f9fa];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#e0e0e0] rounded-full hover:bg-[#757575];
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}

@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String
+  company       String?
+  phone         String?
+  role          Role      @default(CLIENT)
+  stripeId      String?   @unique
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  tickets       Ticket[]
+  invoices      Invoice[]
+  services      ClientService[]
+  chatHistory   ChatMessage[]
+}
+
+model Ticket {
+  id          String       @id @default(cuid())
+  title       String
+  description String
+  status      TicketStatus @default(OPEN)
+  priority    Priority     @default(MEDIUM)
+  category    String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  closedAt    DateTime?
+  
+  userId      String
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages    TicketMessage[]
+}
+
+model TicketMessage {
+  id        String   @id @default(cuid())
+  content   String
+  isStaff   Boolean  @default(false)
+  isAI      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  
+  ticketId  String
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+}
+
+model Invoice {
+  id          String        @id @default(cuid())
+  number      String        @unique
+  stripeId    String?       @unique
+  amount      Float
+  status      InvoiceStatus @default(PENDING)
+  description String
+  dueDate     DateTime
+  paidAt      DateTime?
+  createdAt   DateTime      @default(now())
+  
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items       InvoiceItem[]
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  description String
+  quantity    Int
+  unitPrice   Float
+  
+  invoiceId   String
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+}
+
+model Service {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  priceType   PriceType
+  price       Float
+  features    String[]
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  
+  clients     ClientService[]
+}
+
+model ClientService {
+  id          String        @id @default(cuid())
+  startDate   DateTime      @default(now())
+  endDate     DateTime?
+  status      ServiceStatus @default(ACTIVE)
+  notes       String?
+  
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  serviceId   String
+  service     Service       @relation(fields: [serviceId], references: [id])
+  
+  @@unique([userId, serviceId])
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  role      String   // 'user' or 'assistant'
+  content   String
+  createdAt DateTime @default(now())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Role {
+  CLIENT
+  ADMIN
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_CLIENT
+  RESOLVED
+  CLOSED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum InvoiceStatus {
+  DRAFT
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum PriceType {
+  ONE_TIME
+  MONTHLY
+  HOURLY
+}
+
+enum ServiceStatus {
+  ACTIVE
+  PAUSED
+  CANCELLED
+}
