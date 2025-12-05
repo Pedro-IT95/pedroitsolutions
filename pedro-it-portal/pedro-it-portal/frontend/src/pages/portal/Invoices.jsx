@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { FileText, Download, CreditCard, CheckCircle, Clock, AlertTriangle } from 'lucide-react';
+﻿import { useState, useEffect } from 'react';
+import { FileText, Download, CreditCard, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import api from '../../services/api';
 
 export default function Invoices() {
@@ -12,8 +12,8 @@ export default function Invoices() {
 
   const loadInvoices = async () => {
     try {
-      const { invoices } = await api.getInvoices();
-      setInvoices(invoices || []);
+      const data = await api.getInvoices();
+      setInvoices(data.invoices || []);
     } catch (error) {
       console.error('Error loading invoices:', error);
     } finally {
@@ -21,140 +21,94 @@ export default function Invoices() {
     }
   };
 
-  const handlePay = async (invoiceId) => {
-    try {
-      const { url } = await api.payInvoice(invoiceId);
-      window.location.href = url;
-    } catch (error) {
-      console.error('Error initiating payment:', error);
-    }
-  };
-
-  const getStatusIcon = (status) => {
-    switch (status) {
-      case 'PAID': return <CheckCircle className="w-5 h-5 text-green-500" />;
-      case 'PENDING': return <Clock className="w-5 h-5 text-yellow-500" />;
-      case 'OVERDUE': return <AlertTriangle className="w-5 h-5 text-red-500" />;
-      default: return <FileText className="w-5 h-5 text-dark-500" />;
-    }
-  };
-
   const getStatusBadge = (status) => {
-    const styles = {
-      PAID: 'bg-green-500/20 text-green-400',
-      PENDING: 'bg-yellow-500/20 text-yellow-400',
-      OVERDUE: 'bg-red-500/20 text-red-400',
-      DRAFT: 'bg-dark-600 text-dark-400',
-      CANCELLED: 'bg-dark-600 text-dark-400'
+    const config = {
+      PAID: { icon: CheckCircle, class: 'bg-green-500/20 text-green-300 border-green-500/30', label: 'Pagada' },
+      PENDING: { icon: Clock, class: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30', label: 'Pendiente' },
+      OVERDUE: { icon: AlertCircle, class: 'bg-red-500/20 text-red-300 border-red-500/30', label: 'Vencida' }
     };
-    const labels = {
-      PAID: 'Pagada',
-      PENDING: 'Pendiente',
-      OVERDUE: 'Vencida',
-      DRAFT: 'Borrador',
-      CANCELLED: 'Cancelada'
-    };
+    const { icon: Icon, class: className, label } = config[status] || config.PENDING;
     return (
-      <span className={`px-2 py-1 rounded-full text-xs font-medium ${styles[status]}`}>
-        {labels[status]}
+      <span className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-medium border ${className}`}>
+        <Icon className="w-3 h-3" />
+        {label}
       </span>
     );
   };
 
-  const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD'
-    }).format(amount);
-  };
-
   if (loading) {
     return (
-      <div className="flex justify-center py-12">
-        <div className="w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full animate-spin" />
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="animate-fade-in">
-      <h1 className="text-2xl font-bold text-white mb-6">Mis Facturas</h1>
+    <div className="animate-fade-in space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold text-white">Mis Facturas</h1>
+        <p className="text-white/60 text-sm">Historial de pagos y facturas</p>
+      </div>
 
-      {invoices.length === 0 ? (
-        <div className="card p-12 text-center">
-          <FileText className="w-12 h-12 text-dark-600 mx-auto mb-4" />
-          <p className="text-dark-400">No tienes facturas todavía</p>
-        </div>
-      ) : (
-        <div className="space-y-4">
-          {invoices.map((invoice) => (
-            <div key={invoice.id} className="card p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-start gap-4">
-                  {getStatusIcon(invoice.status)}
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <p className="font-semibold text-white">{invoice.number}</p>
-                      {getStatusBadge(invoice.status)}
-                    </div>
-                    <p className="text-sm text-dark-400 mt-1">{invoice.description}</p>
-                    <div className="flex items-center gap-4 mt-2 text-xs text-dark-500">
-                      <span>Emitida: {new Date(invoice.createdAt).toLocaleDateString('es')}</span>
-                      <span>Vence: {new Date(invoice.dueDate).toLocaleDateString('es')}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <p className="text-2xl font-bold text-white">{formatCurrency(invoice.amount)}</p>
-                  
-                  {invoice.status === 'PENDING' && (
-                    <button
-                      onClick={() => handlePay(invoice.id)}
-                      className="btn-primary"
-                    >
-                      <CreditCard className="w-4 h-4 mr-2" />
-                      Pagar
-                    </button>
-                  )}
-                  
-                  {invoice.status === 'PAID' && (
-                    <span className="text-sm text-green-400">
-                      Pagada el {new Date(invoice.paidAt).toLocaleDateString('es')}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Invoice Items */}
-              {invoice.items?.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-dark-800">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-dark-500">
-                        <th className="text-left py-2">Descripción</th>
-                        <th className="text-center py-2">Cantidad</th>
-                        <th className="text-right py-2">Precio</th>
-                        <th className="text-right py-2">Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {invoice.items.map((item) => (
-                        <tr key={item.id} className="text-dark-300">
-                          <td className="py-2">{item.description}</td>
-                          <td className="text-center py-2">{item.quantity}</td>
-                          <td className="text-right py-2">{formatCurrency(item.unitPrice)}</td>
-                          <td className="text-right py-2">{formatCurrency(item.quantity * item.unitPrice)}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
+      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden">
+        {invoices.length === 0 ? (
+          <div className="p-12 text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FileText className="w-8 h-8 text-white/40" />
             </div>
-          ))}
-        </div>
-      )}
+            <p className="text-white/60">No tienes facturas todavia</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="text-left text-xs text-white/50 border-b border-white/10">
+                  <th className="px-6 py-4 font-medium">Factura</th>
+                  <th className="px-6 py-4 font-medium">Servicio</th>
+                  <th className="px-6 py-4 font-medium">Monto</th>
+                  <th className="px-6 py-4 font-medium">Estado</th>
+                  <th className="px-6 py-4 font-medium">Fecha</th>
+                  <th className="px-6 py-4 font-medium"></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10">
+                {invoices.map((invoice) => (
+                  <tr key={invoice.id} className="hover:bg-white/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <p className="font-medium text-white">#{invoice.invoiceNumber}</p>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="text-sm text-white/60">{invoice.description}</span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="text-lg font-semibold text-white">${invoice.amount}</span>
+                    </td>
+                    <td className="px-6 py-4">{getStatusBadge(invoice.status)}</td>
+                    <td className="px-6 py-4">
+                      <span className="text-sm text-white/50">
+                        {new Date(invoice.createdAt).toLocaleDateString('es')}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-2">
+                        {invoice.status === 'PENDING' && (
+                          <button className="px-3 py-1 bg-white text-[#1a237e] rounded-lg text-sm font-medium hover:bg-white/90 transition-all">
+                            Pagar
+                          </button>
+                        )}
+                        <button className="p-2 text-white/60 hover:text-white transition-colors">
+                          <Download className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
