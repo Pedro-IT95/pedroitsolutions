@@ -77,8 +77,71 @@
         ]
     }
     </script>
+
+    <!-- Floating Remote Support Button Styles -->
+    <style>
+        .remote-support-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .remote-support-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 200, 83, 0.6);
+        }
+        .remote-support-float .icon {
+            font-size: 24px;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(0, 200, 83, 0.7); }
+            100% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
+        }
+        .btn-remote {
+            background: linear-gradient(135deg, #00c853, #00e676) !important;
+            color: white !important;
+            border: none !important;
+        }
+        .btn-remote:hover {
+            background: linear-gradient(135deg, #00e676, #69f0ae) !important;
+        }
+        @media (max-width: 600px) {
+            .remote-support-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+            .remote-support-float .text {
+                display: none;
+            }
+            .remote-support-float .icon {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Floating Remote Support Button -->
+    <a href="https://remote.pedroitsolutions.com" target="_blank" class="remote-support-float" title="Need Help? Get Remote Support Now!">
+        <span class="icon">🖥️</span>
+        <span class="text">Remote Support</span>
+    </a>
+
     <!-- Header -->
     <header>
         <nav>
@@ -87,6 +150,7 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://remote.pedroitsolutions.com" target="_blank" style="color: #00e676;">🖥️ Remote Support</a></li>
             </ul>
         </nav>
     </header>
@@ -99,6 +163,7 @@
             <p>Professional IT Services for Businesses in Odessa, TX and Remote Clients Across the USA. Secure, Reliable, and Always Available.</p>
             <a href="contact.html" class="btn">Get Free Consultation</a>
             <a href="services.html" class="btn btn-secondary">Our Services</a>
+            <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote">🖥️ Get Remote Support</a>
         </section>
 
         <!-- Trust Badges -->
@@ -147,6 +212,7 @@
                 <span class="feature-icon">🖥️</span>
                 <h3>Remote IT Support</h3>
                 <p>24/7 technical support for your business from anywhere in the USA. Fast response, reliable solutions.</p>
+                <a href="https://remote.pedroitsolutions.com" target="_blank" class="feature-link">Connect Now →</a>
             </div>
             <div class="feature">
                 <span class="feature-icon">☁️</span>
@@ -173,6 +239,13 @@
                 <h3>Network Management</h3>
                 <p>Design, setup, and management of your business network. Optimized for performance and security.</p>
             </div>
+        </section>
+
+        <!-- Remote Support CTA Section -->
+        <section class="remote-cta" style="background: linear-gradient(135deg, #1a237e, #0d47a1); padding: 60px 20px; text-align: center; margin: 40px 0;">
+            <h2 style="color: white; font-size: 2.5em; margin-bottom: 20px;">Need Immediate IT Support?</h2>
+            <p style="color: #b3e5fc; font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with our technicians instantly through our secure remote support platform. Fast, secure, and professional assistance at your fingertips.</p>
+            <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote" style="font-size: 1.3em; padding: 18px 40px;">🖥️ Start Remote Session</a>
         </section>
 
         <!-- About Section -->
@@ -209,6 +282,23 @@
         </section>
 
         <!-- CTA Section -->
+        <!-- Our Products Section -->
+        <section class="products-section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 60px 20px; text-align: center;">
+            <h2 style="color: #00e676; font-size: 2.2em; margin-bottom: 15px;">Our Products</h2>
+            <p style="color: #b3e5fc; font-size: 1.1em; margin-bottom: 40px;">Software solutions developed by Pedro IT Solutions</p>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(102,126,234,0.3);">
+                    <div style="font-size: 60px; margin-bottom: 15px;">🧹</div>
+                    <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Cuban Technology Cleaner</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Professional Windows optimization tool. Deep cleaning, system repair, and performance boost with one click.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://windowscleanerpro.com" target="_blank" style="background: white; color: #667eea; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold;">Visit Website</a>
+                        <a href="https://apps.microsoft.com/search?query=cuban+technology+cleaner" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid white;">Microsoft Store</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cta">
             <h2>Ready to Secure Your Business?</h2>
             <p>Get a free consultation and discover how we can help your business grow with reliable IT solutions.</p>
@@ -232,15 +322,16 @@
                 <a href="services.html">Software Development</a>
             </div>
             <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="https://remote.pedroitsolutions.com" target="_blank">🖥️ Remote Support</a>
+                <a href="https://portal.pedroitsolutions.com" target="_blank">👤 Client Portal</a>
+                <a href="contact.html">📧 Contact Us</a>
+            </div>
+            <div class="footer-section">
                 <h4>Contact</h4>
                 <p>📍 Odessa, TX 79761</p>
                 <p>📧 contact@pedroitsolutions.com</p>
                 <p>📞 (432) 232-6946</p>
-            </div>
-            <div class="footer-section">
-                <h4>Hours</h4>
-                <p>Monday - Friday: 8am - 6pm</p>
-                <p>Emergency Support: 24/7</p>
             </div>
         </div>
         <div class="footer-bottom">
