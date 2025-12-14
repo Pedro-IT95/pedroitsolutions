@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pedro IT Solutions - Professional IT Services, Remote Support, Cloud Hosting, and Cybersecurity for businesses in Odessa, TX and across the USA.">
+    <meta name="keywords" content="IT Services, Remote Support, Cloud Hosting, Cybersecurity, HIPAA, FedRAMP, Odessa TX, IT Support">
+    <meta name="author" content="Pedro IT Solutions">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Pedro IT Solutions | Professional IT Services">
+    <meta property="og:description" content="Your trusted IT partner for Remote Support, Cloud Solutions, and Cybersecurity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pedroitsolutions.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <title>Pedro IT Solutions | Professional IT Services & Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Pedro IT Solutions</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Your Trusted IT Partner</h1>
+            <p>Professional IT Services for Businesses in Odessa, TX and Remote Clients Across the USA. Secure, Reliable, and Always Available.</p>
+            <a href="contact.html" class="btn">Get Free Consultation</a>
+            <a href="services.html" class="btn btn-secondary">Our Services</a>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="trust-badges">
+            <div class="badge">
+                <span class="badge-icon">🔒</span>
+                <span>HIPAA Compliant</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">🛡️</span>
+                <span>FedRAMP Ready</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">⚡</span>
+                <span>24/7 Support</span>
+            </div>
+            <div class="badge">
+                <span class="badge-icon">🇺🇸</span>
+                <span>USA Based</span>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat">
+                <span class="stat-number">12+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support Available</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime Guarantee</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature">
+                <span class="feature-icon">🖥️</span>
+                <h3>Remote IT Support</h3>
+                <p>24/7 technical support for your business from anywhere in the USA. Fast response, reliable solutions.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">☁️</span>
+                <h3>Private Cloud Hosting</h3>
+                <p>Secure cloud solutions on our own infrastructure. Your data, your control, maximum security.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <h3>Cybersecurity</h3>
+                <p>HIPAA, FedRAMP, and CJIS compliant security services. Enterprise-level protection for your business.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💻</span>
+                <h3>Software Development</h3>
+                <p>Custom applications for Windows, Android, and iOS. Tailored solutions for your unique needs.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💾</span>
+                <h3>Backup & Recovery</h3>
+                <p>Automated backups and disaster recovery. Protect your business data from any threat.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌐</span>
+                <h3>Network Management</h3>
+                <p>Design, setup, and management of your business network. Optimized for performance and security.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Pedro IT Solutions</h2>
+            <p>Based in Odessa, Texas, Pedro IT Solutions provides professional IT services to local businesses and remote clients across the United States. With over 12 years of experience in IT infrastructure, cybersecurity, and software development, we deliver reliable, secure, and affordable solutions tailored to your business needs. Our commitment is simple: your success is our success.</p>
+        </section>
+
+        <!-- Security Section -->
+        <section class="security-section">
+            <h2>Enterprise-Grade Security</h2>
+            <div class="security-badges">
+                <div class="security-badge">
+                    <span>🏥</span>
+                    <span>HIPAA</span>
+                </div>
+                <div class="security-badge">
+                    <span>🏛️</span>
+                    <span>FedRAMP</span>
+                </div>
+                <div class="security-badge">
+                    <span>👮</span>
+                    <span>CJIS</span>
+                </div>
+                <div class="security-badge">
+                    <span>🔐</span>
+                    <span>SSL/TLS</span>
+                </div>
+                <div class="security-badge">
+                    <span>🛡️</span>
+                    <span>Firewall</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Secure Your Business?</h2>
+            <p>Get a free consultation and discover how we can help your business grow with reliable IT solutions.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Pedro IT Solutions</h4>
+                <p>Your trusted IT partner for businesses in Texas and across the USA.</p>
+                <p>🇺🇸 Proudly serving American businesses</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="services.html">Remote IT Support</a>
+                <a href="services.html">Cloud Hosting</a>
+                <a href="services.html">Cybersecurity</a>
+                <a href="services.html">Software Development</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📍 Odessa, TX 79761</p>
+                <p>📧 contact@pedroitsolutions.com</p>
+                <p>📞 (432) 232-6946</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Monday - Friday: 8am - 6pm</p>
+                <p>Emergency Support: 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pedro IT Solutions. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

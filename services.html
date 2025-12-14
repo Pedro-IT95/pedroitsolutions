@@ -7,158 +7,318 @@
     <meta name="keywords" content="IT Services, Remote Support, Cloud Hosting, Cybersecurity, HIPAA, FedRAMP, Odessa TX, IT Support">
     <meta name="author" content="Pedro IT Solutions">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Pedro IT Solutions | Professional IT Services">
     <meta property="og:description" content="Your trusted IT partner for Remote Support, Cloud Solutions, and Cybersecurity.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pedroitsolutions.com">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <title>Pedro IT Solutions | Professional IT Services & Support</title>
+    <title>Our Services | Pedro IT Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .services-hero h1 {
+            color: #00e676;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .services-hero p {
+            color: #b3e5fc;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 230, 118, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 230, 118, 0.2);
+        }
+        .service-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            color: #00e676;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #b3e5fc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .service-price {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .service-features {
+            text-align: left;
+            margin-bottom: 25px;
+            padding: 0;
+        }
+        .service-features li {
+            color: #888;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            list-style: none;
+        }
+        .service-features li::before {
+            content: "✓ ";
+            color: #00e676;
+        }
+        .btn-service {
+            display: inline-block;
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
+        }
+        .btn-remote-service {
+            background: linear-gradient(135deg, #2196f3, #00bcd4);
+        }
+        .remote-badge {
+            display: inline-block;
+            background: #00e676;
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .onsite-badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .remote-support-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .remote-support-float:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 200, 83, 0.6);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(0, 200, 83, 0.7); }
+            100% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
+        }
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 30px 15px;
+            }
+            .remote-support-float .text {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <a href="https://remote.pedroitsolutions.com" target="_blank" class="remote-support-float" title="Need Help? Get Remote Support Now!">
+        <span class="icon">🖥️</span>
+        <span class="text">Remote Support</span>
+    </a>
     <header>
         <nav>
             <div class="logo">Pedro IT Solutions</div>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://portal.pedroitsolutions.com" target="_blank" style="color: #ffd700;">👤 Client Portal</a></li>
+                <li><a href="https://remote.pedroitsolutions.com" target="_blank" style="color: #00e676;">🖥️ Remote Support</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Your Trusted IT Partner</h1>
-            <p>Professional IT Services for Businesses in Odessa, TX and Remote Clients Across the USA. Secure, Reliable, and Always Available.</p>
-            <a href="contact.html" class="btn">Get Free Consultation</a>
-            <a href="services.html" class="btn btn-secondary">Our Services</a>
+        <section class="services-hero">
+            <h1>Our Services</h1>
+            <p>Professional IT solutions tailored to your business needs. Choose from remote support or on-site services.</p>
         </section>
-
-        <!-- Trust Badges -->
-        <section class="trust-badges">
-            <div class="badge">
-                <span class="badge-icon">🔒</span>
-                <span>HIPAA Compliant</span>
-            </div>
-            <div class="badge">
-                <span class="badge-icon">🛡️</span>
-                <span>FedRAMP Ready</span>
-            </div>
-            <div class="badge">
-                <span class="badge-icon">⚡</span>
-                <span>24/7 Support</span>
-            </div>
-            <div class="badge">
-                <span class="badge-icon">🇺🇸</span>
-                <span>USA Based</span>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="stat">
-                <span class="stat-number">12+</span>
-                <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">Support Available</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">99.9%</span>
-                <span class="stat-label">Uptime Guarantee</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Client Satisfaction</span>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <div class="feature">
-                <span class="feature-icon">🖥️</span>
+        <section class="services-grid">
+            <div class="service-card">
+                <span class="remote-badge">🌐 REMOTE</span>
+                <div class="service-icon">🖥️</div>
                 <h3>Remote IT Support</h3>
                 <p>24/7 technical support for your business from anywhere in the USA. Fast response, reliable solutions.</p>
+                <div class="service-price">Starting at $50/session</div>
+                <ul class="service-features">
+                    <li>Instant connection via secure link</li>
+                    <li>Screen sharing & remote control</li>
+                    <li>Software installation & updates</li>
+                    <li>Virus & malware removal</li>
+                    <li>System optimization</li>
+                </ul>
+                <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn-service btn-remote-service">🖥️ Connect Now</a>
             </div>
-            <div class="feature">
-                <span class="feature-icon">☁️</span>
+            <div class="service-card">
+                <span class="remote-badge">🌐 REMOTE</span>
+                <div class="service-icon">☁️</div>
                 <h3>Private Cloud Hosting</h3>
                 <p>Secure cloud solutions on our own infrastructure. Your data, your control, maximum security.</p>
+                <div class="service-price">Starting at $100/month</div>
+                <ul class="service-features">
+                    <li>Dedicated server resources</li>
+                    <li>99.9% uptime guarantee</li>
+                    <li>Daily automated backups</li>
+                    <li>SSL certificates included</li>
+                    <li>24/7 monitoring</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Request Service</a>
             </div>
-            <div class="feature">
-                <span class="feature-icon">🔒</span>
+            <div class="service-card">
+                <span class="remote-badge">🌐 REMOTE</span>
+                <div class="service-icon">🔒</div>
                 <h3>Cybersecurity</h3>
                 <p>HIPAA, FedRAMP, and CJIS compliant security services. Enterprise-level protection for your business.</p>
+                <div class="service-price">Starting at $150/month</div>
+                <ul class="service-features">
+                    <li>Security audit & assessment</li>
+                    <li>Firewall configuration</li>
+                    <li>Intrusion detection</li>
+                    <li>Compliance documentation</li>
+                    <li>Employee security training</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Request Service</a>
             </div>
-            <div class="feature">
-                <span class="feature-icon">💻</span>
+            <div class="service-card">
+                <span class="remote-badge">🌐 REMOTE</span>
+                <div class="service-icon">💻</div>
                 <h3>Software Development</h3>
                 <p>Custom applications for Windows, Android, and iOS. Tailored solutions for your unique needs.</p>
+                <div class="service-price">Starting at $500/project</div>
+                <ul class="service-features">
+                    <li>Custom business applications</li>
+                    <li>Mobile app development</li>
+                    <li>Web application development</li>
+                    <li>API integrations</li>
+                    <li>Ongoing maintenance</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Request Quote</a>
             </div>
-            <div class="feature">
-                <span class="feature-icon">💾</span>
+            <div class="service-card">
+                <span class="remote-badge">🌐 REMOTE</span>
+                <div class="service-icon">💾</div>
                 <h3>Backup & Recovery</h3>
                 <p>Automated backups and disaster recovery. Protect your business data from any threat.</p>
+                <div class="service-price">Starting at $75/month</div>
+                <ul class="service-features">
+                    <li>Automated daily backups</li>
+                    <li>Off-site secure storage</li>
+                    <li>Quick data restoration</li>
+                    <li>Disaster recovery planning</li>
+                    <li>Encryption at rest & transit</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Request Service</a>
             </div>
-            <div class="feature">
-                <span class="feature-icon">🌐</span>
+            <div class="service-card">
+                <span class="onsite-badge">📍 ON-SITE (Odessa, TX)</span>
+                <div class="service-icon">🌐</div>
                 <h3>Network Management</h3>
                 <p>Design, setup, and management of your business network. Optimized for performance and security.</p>
+                <div class="service-price">Starting at $200/visit</div>
+                <ul class="service-features">
+                    <li>Network design & planning</li>
+                    <li>Router & switch configuration</li>
+                    <li>WiFi optimization</li>
+                    <li>Cable management</li>
+                    <li>Network security setup</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Schedule Visit</a>
+            </div>
+            <div class="service-card">
+                <span class="onsite-badge">📍 ON-SITE (Odessa, TX)</span>
+                <div class="service-icon">🔧</div>
+                <h3>Computer Repair</h3>
+                <p>Hardware diagnostics, repairs, and upgrades for desktops and laptops. Fast turnaround time.</p>
+                <div class="service-price">Starting at $75/visit</div>
+                <ul class="service-features">
+                    <li>Hardware diagnostics</li>
+                    <li>Component replacement</li>
+                    <li>RAM & SSD upgrades</li>
+                    <li>Screen replacement</li>
+                    <li>Data recovery</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Schedule Visit</a>
+            </div>
+            <div class="service-card">
+                <span class="onsite-badge">📍 ON-SITE (Odessa, TX)</span>
+                <div class="service-icon">🖲️</div>
+                <h3>Server Setup & Maintenance</h3>
+                <p>Professional server installation, configuration, and ongoing maintenance for your business.</p>
+                <div class="service-price">Starting at $300/project</div>
+                <ul class="service-features">
+                    <li>Server hardware selection</li>
+                    <li>Operating system installation</li>
+                    <li>Active Directory setup</li>
+                    <li>File server configuration</li>
+                    <li>Ongoing maintenance plans</li>
+                </ul>
+                <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn-service">📋 Schedule Visit</a>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section class="about">
-            <h2>About Pedro IT Solutions</h2>
-            <p>Based in Odessa, Texas, Pedro IT Solutions provides professional IT services to local businesses and remote clients across the United States. With over 12 years of experience in IT infrastructure, cybersecurity, and software development, we deliver reliable, secure, and affordable solutions tailored to your business needs. Our commitment is simple: your success is our success.</p>
+        <section class="trust-badges">
+            <div class="badge"><span class="badge-icon">🔒</span><span>HIPAA Compliant</span></div>
+            <div class="badge"><span class="badge-icon">🛡️</span><span>FedRAMP Ready</span></div>
+            <div class="badge"><span class="badge-icon">⚡</span><span>24/7 Support</span></div>
+            <div class="badge"><span class="badge-icon">🇺🇸</span><span>USA Based</span></div>
         </section>
-
-        <!-- Security Section -->
-        <section class="security-section">
-            <h2>Enterprise-Grade Security</h2>
-            <div class="security-badges">
-                <div class="security-badge">
-                    <span>🏥</span>
-                    <span>HIPAA</span>
-                </div>
-                <div class="security-badge">
-                    <span>🏛️</span>
-                    <span>FedRAMP</span>
-                </div>
-                <div class="security-badge">
-                    <span>👮</span>
-                    <span>CJIS</span>
-                </div>
-                <div class="security-badge">
-                    <span>🔐</span>
-                    <span>SSL/TLS</span>
-                </div>
-                <div class="security-badge">
-                    <span>🛡️</span>
-                    <span>Firewall</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
         <section class="cta">
-            <h2>Ready to Secure Your Business?</h2>
-            <p>Get a free consultation and discover how we can help your business grow with reliable IT solutions.</p>
-            <a href="contact.html" class="btn">Contact Us Today</a>
+            <h2>Not Sure What You Need?</h2>
+            <p>Get a free consultation and we'll recommend the best solutions for your business.</p>
+            <a href="contact.html" class="btn">Get Free Consultation</a>
+            <a href="https://portal.pedroitsolutions.com" target="_blank" class="btn btn-secondary" style="margin-left: 15px;">👤 Client Portal</a>
         </section>
     </main>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -167,11 +327,10 @@
                 <p>🇺🇸 Proudly serving American businesses</p>
             </div>
             <div class="footer-section">
-                <h4>Services</h4>
-                <a href="services.html">Remote IT Support</a>
-                <a href="services.html">Cloud Hosting</a>
-                <a href="services.html">Cybersecurity</a>
-                <a href="services.html">Software Development</a>
+                <h4>Quick Access</h4>
+                <a href="https://remote.pedroitsolutions.com" target="_blank">🖥️ Remote Support</a>
+                <a href="https://portal.pedroitsolutions.com" target="_blank">👤 Client Portal</a>
+                <a href="contact.html">📧 Contact Us</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
