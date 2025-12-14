@@ -1,90 +1,17 @@
-cat > ~/pedroitsolutions/index.html << 'ENDOFFILE'
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pedro IT Solutions - Professional IT Services, Remote Support, Cloud Hosting, and Cybersecurity for businesses in Odessa, TX and across the USA.">
-    <meta name="keywords" content="IT Services, Remote Support, Cloud Hosting, Cybersecurity, HIPAA, FedRAMP, Odessa TX">
-    <meta name="author" content="Pedro IT Solutions">
-    <meta name="robots" content="index, follow">
-    <meta name="geo.region" content="US-TX">
-    <meta name="geo.placename" content="Odessa, Texas">
     <link rel="canonical" href="https://pedroitsolutions.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pedroitsolutions.com/">
-    <meta property="og:title" content="Pedro IT Solutions | Professional IT Services & Support">
-    <meta property="og:description" content="Your trusted IT partner for Remote Support, Cloud Solutions, and Cybersecurity.">
-    <meta property="og:image" content="https://pedroitsolutions.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <meta name="theme-color" content="#007bff">
+    <meta name="theme-color" content="#1a237e">
     <title>Pedro IT Solutions | Professional IT Services & Support</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .remote-support-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #00c853, #00e676);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        .remote-support-float:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 30px rgba(0, 200, 83, 0.6);
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
-            50% { box-shadow: 0 4px 30px rgba(0, 200, 83, 0.7); }
-            100% { box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4); }
-        }
-        .btn-remote {
-            background: linear-gradient(135deg, #00c853, #00e676) !important;
-            color: white !important;
-            border: none !important;
-        }
-        .btn-remote:hover {
-            background: linear-gradient(135deg, #00e676, #69f0ae) !important;
-        }
-        @media (max-width: 600px) {
-            .remote-support-float { bottom: 20px; right: 20px; padding: 12px 18px; font-size: 14px; }
-            .remote-support-float .text { display: none; }
-            .remote-support-float .icon { font-size: 28px; }
-        }
-        .header-logo-img {
-            height: 45px;
-            width: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-            box-shadow: 0 0 15px rgba(0, 230, 255, 0.5);
-        }
-        .logo-wrapper { display: flex; align-items: center; }
-        .about-logo-container { text-align: center; margin: 30px 0; }
-        .about-logo-img {
-            max-width: 350px;
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 230, 255, 0.3);
-        }
-    </style>
 </head>
 <body>
-    <a href="https://remote.pedroitsolutions.com" target="_blank" class="remote-support-float" title="Need Help? Get Remote Support Now!">
+    <a href="https://remote.pedroitsolutions.com" target="_blank" class="remote-support-float">
         <span class="icon">🖥️</span>
         <span class="text">Remote Support</span>
     </a>
@@ -102,77 +29,85 @@ cat > ~/pedroitsolutions/index.html << 'ENDOFFILE'
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="hero">
-            <h1>Your Trusted IT Partner</h1>
-            <p>Professional IT Services for Businesses in Odessa, TX and Remote Clients Across the USA. Secure, Reliable, and Always Available.</p>
-            <a href="contact.html" class="btn">Get Free Consultation</a>
-            <a href="services.html" class="btn btn-secondary">Our Services</a>
-            <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote">🖥️ Get Remote Support</a>
-        </section>
-        <section class="trust-badges">
-            <div class="badge"><span class="badge-icon">🔒</span><span>HIPAA Compliant</span></div>
-            <div class="badge"><span class="badge-icon">🛡️</span><span>FedRAMP Ready</span></div>
-            <div class="badge"><span class="badge-icon">⚡</span><span>24/7 Support</span></div>
-            <div class="badge"><span class="badge-icon">🇺🇸</span><span>USA Based</span></div>
-        </section>
-        <section class="stats">
-            <div class="stat"><span class="stat-number">12+</span><span class="stat-label">Years Experience</span></div>
-            <div class="stat"><span class="stat-number">24/7</span><span class="stat-label">Support Available</span></div>
-            <div class="stat"><span class="stat-number">99.9%</span><span class="stat-label">Uptime Guarantee</span></div>
-            <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Client Satisfaction</span></div>
-        </section>
-        <section class="features">
-            <div class="feature"><span class="feature-icon">🖥️</span><h3>Remote IT Support</h3><p>24/7 technical support for your business from anywhere in the USA.</p><a href="https://remote.pedroitsolutions.com" target="_blank" class="feature-link">Connect Now →</a></div>
-            <div class="feature"><span class="feature-icon">☁️</span><h3>Private Cloud Hosting</h3><p>Secure cloud solutions on our own infrastructure. Your data, your control.</p></div>
-            <div class="feature"><span class="feature-icon">🔒</span><h3>Cybersecurity</h3><p>HIPAA, FedRAMP, and CJIS compliant security services.</p></div>
-            <div class="feature"><span class="feature-icon">💻</span><h3>Software Development</h3><p>Custom applications for Windows, Android, and iOS.</p></div>
-            <div class="feature"><span class="feature-icon">💾</span><h3>Backup & Recovery</h3><p>Automated backups and disaster recovery solutions.</p></div>
-            <div class="feature"><span class="feature-icon">🌐</span><h3>Network Management</h3><p>Design, setup, and management of your business network.</p></div>
-        </section>
-        <section class="remote-cta" style="background: linear-gradient(135deg, #1a237e, #0d47a1); padding: 60px 20px; text-align: center; margin: 40px 0;">
-            <h2 style="color: white; font-size: 2.5em; margin-bottom: 20px;">Need Immediate IT Support?</h2>
-            <p style="color: #b3e5fc; font-size: 1.2em; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with our technicians instantly through our secure remote support platform.</p>
-            <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote" style="font-size: 1.3em; padding: 18px 40px;">🖥️ Start Remote Session</a>
-        </section>
-        <section class="about">
-            <h2>About Pedro IT Solutions</h2>
-            <div class="about-logo-container">
-                <img src="pedro-it-logo.png" alt="Pedro IT Solutions Logo" class="about-logo-img">
-            </div>
-            <p>Based in Odessa, Texas, Pedro IT Solutions provides professional IT services to local businesses and remote clients across the United States. With over 12 years of experience in IT infrastructure, cybersecurity, and software development, we deliver reliable, secure, and affordable solutions tailored to your business needs.</p>
-        </section>
-        <section class="security-section">
-            <h2>Enterprise-Grade Security</h2>
-            <div class="security-badges">
-                <div class="security-badge"><span>🏥</span><span>HIPAA</span></div>
-                <div class="security-badge"><span>🏛️</span><span>FedRAMP</span></div>
-                <div class="security-badge"><span>👮</span><span>CJIS</span></div>
-                <div class="security-badge"><span>🔐</span><span>SSL/TLS</span></div>
-                <div class="security-badge"><span>🛡️</span><span>Firewall</span></div>
-            </div>
-        </section>
-        <section class="products-section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 60px 20px; text-align: center;">
-            <h2 style="color: #00e676; font-size: 2.2em; margin-bottom: 15px;">Our Products</h2>
-            <p style="color: #b3e5fc; font-size: 1.1em; margin-bottom: 40px;">Software solutions developed by Pedro IT Solutions</p>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; max-width: 1000px; margin: 0 auto;">
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 30px; max-width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(102,126,234,0.3);">
-                    <div style="font-size: 60px; margin-bottom: 15px;">🧹</div>
-                    <h3 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Cuban Technology Cleaner</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">Professional Windows optimization tool.</p>
-                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://windowscleanerpro.com" target="_blank" style="background: white; color: #667eea; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold;">Visit Website</a>
-                        <a href="https://apps.microsoft.com/search?query=cuban+technology+cleaner" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; border: 2px solid white;">Microsoft Store</a>
-                    </div>
+
+    <section class="hero">
+        <h1>Your Trusted IT Partner</h1>
+        <p>Professional IT Services for Businesses in Odessa, TX and Remote Clients Across the USA. Secure, Reliable, and Always Available.</p>
+        <a href="contact.html" class="btn">Get Free Consultation</a>
+        <a href="services.html" class="btn btn-secondary">Our Services</a>
+        <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote">🖥️ Get Remote Support</a>
+    </section>
+
+    <section class="trust-badges">
+        <div class="badge"><span class="badge-icon">🔒</span><span>HIPAA Compliant</span></div>
+        <div class="badge"><span class="badge-icon">🛡️</span><span>FedRAMP Ready</span></div>
+        <div class="badge"><span class="badge-icon">⚡</span><span>24/7 Support</span></div>
+        <div class="badge"><span class="badge-icon">🇺🇸</span><span>USA Based</span></div>
+    </section>
+
+    <section class="stats">
+        <div class="stat"><span class="stat-number">12+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-number">24/7</span><span class="stat-label">Support Available</span></div>
+        <div class="stat"><span class="stat-number">99.9%</span><span class="stat-label">Uptime Guarantee</span></div>
+        <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Client Satisfaction</span></div>
+    </section>
+
+    <section class="features">
+        <div class="feature"><span class="feature-icon">🖥️</span><h3>Remote IT Support</h3><p>24/7 technical support for your business from anywhere in the USA.</p><a href="https://remote.pedroitsolutions.com" target="_blank" class="feature-link">Connect Now →</a></div>
+        <div class="feature"><span class="feature-icon">☁️</span><h3>Private Cloud Hosting</h3><p>Secure cloud solutions on our own infrastructure. Your data, your control.</p></div>
+        <div class="feature"><span class="feature-icon">🔒</span><h3>Cybersecurity</h3><p>HIPAA, FedRAMP, and CJIS compliant security services.</p></div>
+        <div class="feature"><span class="feature-icon">💻</span><h3>Software Development</h3><p>Custom applications for Windows, Android, and iOS.</p></div>
+        <div class="feature"><span class="feature-icon">💾</span><h3>Backup & Recovery</h3><p>Automated backups and disaster recovery solutions.</p></div>
+        <div class="feature"><span class="feature-icon">🌐</span><h3>Network Management</h3><p>Design, setup, and management of your business network.</p></div>
+    </section>
+
+    <section class="remote-cta">
+        <h2>Need Immediate IT Support?</h2>
+        <p>Connect with our technicians instantly through our secure remote support platform.</p>
+        <a href="https://remote.pedroitsolutions.com" target="_blank" class="btn btn-remote" style="font-size: 1.2em; padding: 18px 40px;">🖥️ Start Remote Session</a>
+    </section>
+
+    <section class="about">
+        <h2>About Pedro IT Solutions</h2>
+        <div class="about-logo-container">
+            <img src="pedro-it-logo.png" alt="Pedro IT Solutions Logo" class="about-logo-img">
+        </div>
+        <p>Based in Odessa, Texas, Pedro IT Solutions provides professional IT services to local businesses and remote clients across the United States. With over 12 years of experience in IT infrastructure, cybersecurity, and software development, we deliver reliable, secure, and affordable solutions tailored to your business needs.</p>
+    </section>
+
+    <section class="security-section">
+        <h2>Enterprise-Grade Security</h2>
+        <div class="security-badges">
+            <div class="security-badge"><span>🏥</span><span>HIPAA</span></div>
+            <div class="security-badge"><span>🏛️</span><span>FedRAMP</span></div>
+            <div class="security-badge"><span>��</span><span>CJIS</span></div>
+            <div class="security-badge"><span>🔐</span><span>SSL/TLS</span></div>
+            <div class="security-badge"><span>🛡️</span><span>Firewall</span></div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2>Our Products</h2>
+        <p class="products-subtitle">Software solutions developed by Pedro IT Solutions</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🧹</div>
+                <h3>Cuban Technology Cleaner</h3>
+                <p>Professional Windows optimization tool.</p>
+                <div class="product-buttons">
+                    <a href="https://windowscleanerpro.com" target="_blank" class="btn-product">Visit Website</a>
+                    <a href="https://apps.microsoft.com/search?query=cuban+technology+cleaner" target="_blank" class="btn-product-outline">Microsoft Store</a>
                 </div>
             </div>
-        </section>
-        <section class="cta">
-            <h2>Ready to Secure Your Business?</h2>
-            <p>Get a free consultation and discover how we can help your business grow.</p>
-            <a href="contact.html" class="btn">Contact Us Today</a>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Secure Your Business?</h2>
+        <p>Get a free consultation and discover how we can help your business grow.</p>
+        <a href="contact.html" class="btn">Contact Us Today</a>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section"><h4>Pedro IT Solutions</h4><p>Your trusted IT partner for businesses in Texas and across the USA.</p><p>🇺🇸 Proudly serving American businesses</p></div>
@@ -184,4 +119,3 @@ cat > ~/pedroitsolutions/index.html << 'ENDOFFILE'
     </footer>
 </body>
 </html>
-ENDOFFILE
